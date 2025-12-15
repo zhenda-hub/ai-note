@@ -1,5 +1,10 @@
+---
+statistics: True
+---
+
 # Welcome to MkDocs
 
+本站共有 {{ pages }} 个页面，{{ words }} 个字，{{ codes }} 行代码，{{ images }} 张图片。
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 ## Commands
