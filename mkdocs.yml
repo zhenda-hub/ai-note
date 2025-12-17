@@ -1,41 +1,40 @@
 site_name: Zhenda AI Notes
 
 nav:
-  - Home: index.md
-
-  - 概览:
-      - 学习路线: overview/roadmap.md
-      - 术语速查: overview/glossary.md
-  - AI基础知识:
-      - 概述: basics/overview.md
-      - AI发展史: foundation/history.md
-      - 数学基础:
-        - 线性代数: foundation/math/linear-algebra.md
-        - 概率统计: foundation/math/probability-statistics.md
-        - 微积分: foundation/math/calculus.md
-        - 优化理论: foundation/math/optimization.md
-      - 机器学习基础: basics/ml-basics.md
-      - 深度学习与神经网络: basics/dl-neural.md
-      - 监督 / 无监督 / 强化学习: basics/learning-types.md
+  - 首页: index.md
+  - 数学基础:
+    - 微积分: math/calculus.md
+    - 线性代数: math/linear-algebra.md
+    - 概率统计: math/probability-statistics.md
+  - 概览: overview.md
+  - AI发展史: foundation/history.md
+  - AI开发工具: tools.md
+  - 机器学习:
+      - 监督 / 无监督 / 强化学习: ml/learning-types.md
+      - 机器学习基础: ml/basics.md
+      - 机器学习算法: ml/algorithms.md
+  - 深度学习:
+      - 深度学习与神经网络: dl/neural.md
+      - CNN: dl/cnn.md
+      - RNN: dl/rnn.md
+      - GANs: dl/gans.md
       - 大模型核心原理:
+        - Token / Embedding: llm/token-embedding.md
         - Transformer架构详解: basic/llm_core/transformer.md  # 自注意力、RoPE、RMSNorm
-        - 预训练&微调核心逻辑: basic/llm_core/pretrain_finetune.md
         - 注意力机制变体: basic/llm_core/attention_variants.md  # 多头、稀疏、分组注意力
-      - 大模型预训练与Scaling Laws: basics/scaling.md
-  - 大模型基础:
-      - 什么是大模型: llm/what-is-llm.md
-      - Token / Embedding: llm/token-embedding.md
-      - 预训练与微调: llm/training.md
-      - SFT / RLHF: llm/alignment.md
-      - 多模态模型 (文本+图像/视频): models/multimodal.md
-  - 大模型应用开发:
-      - Prompt工程: dev/prompt.md
-      - RAG基础开发: dev/rag_basic.md
-      - Agent入门: dev/agent_basic.md
-      - 部署与推理优化 (vLLM, Hugging Face等): dev/deployment.md
-  - 大模型应用开发2:
-      - Fine-tuning 与 LoRA/PEFT: dev/finetune.md
-      - 多模态应用开发 (图像/视频生成): dev/multimodal-dev.md
+        - 预训练与微调: llm/training.md
+        - SFT / RLHF: llm/alignment.md
+        - 多模态模型 (文本+图像/视频): models/multimodal.md
+        # - 大模型预训练与Scaling Laws: basics/scaling.md
+      - 大模型应用开发:
+        - Prompt工程: dev/prompt.md
+        - RAG基础开发: dev/rag_basic.md
+        - Agent入门: dev/agent_basic.md
+      - 大模型应用开发2:
+        - Fine-tuning 与 LoRA/PEFT: dev/finetune.md
+        - 部署与推理优化 (vLLM, Hugging Face等): dev/deployment.md
+        - 模型优化: dev/prefer.md
+        - 模型部署: dev/deploy.md
   
         
 # theme: readthedocs
