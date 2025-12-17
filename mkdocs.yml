@@ -2,20 +2,27 @@ site_name: Zhenda AI Notes
 
 nav:
   - 首页: index.md
+  - 概览: overview.md
+  - AI发展史: foundation/history.md
+  - AI开发工具: tools.md
   - 数学基础:
     - 微积分: math/calculus.md
     - 线性代数: math/linear-algebra.md
     - 概率统计: math/probability-statistics.md
-  - 概览: overview.md
-  - AI发展史: foundation/history.md
-  - AI开发工具: tools.md
   - 机器学习:
-      - 监督 / 无监督 / 强化学习: ml/learning-types.md
+      - 机器学习概览: ml/index.md
+      - 监督学习: ml/supervised.md
+      - 无监督学习: ml/unsupervised.md
+      - 强化学习: ml/reinforcement_learning.md
       - 机器学习基础: ml/basics.md
       - 机器学习算法: ml/algorithms.md
   - 深度学习:
       - 概览: dl/index.md
-      # - pytorch: dl/in.md
+      - pytorch: 
+        - Tensor 与 Autograd: dl/pytorch/tensor-autograd.md
+        - nn.Module 与模型构建: dl/pytorch/nn-module.md
+        - 训练循环详解: dl/pytorch/training-loop.md
+        - 用 PyTorch 实现 Transformer: dl/pytorch/transformer.md
       - 深度学习与神经网络: dl/neural.md
       - CNN: dl/cnn.md
       - RNN: dl/rnn.md
