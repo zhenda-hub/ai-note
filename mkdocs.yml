@@ -19,7 +19,7 @@ nav:
   - 深度学习:
       - 概览: dl/index.md
       - pytorch: 
-        - Tensor 与 Autograd: dl/pytorch/tensor-autograd.md
+        - Tensor 与 Autograd: dl/pytorch/tensor.md
         - nn.Module 与模型构建: dl/pytorch/nn-module.md
         - 训练循环详解: dl/pytorch/training-loop.md
         - 用 PyTorch 实现 Transformer: dl/pytorch/transformer.md
@@ -36,7 +36,7 @@ nav:
           - 多模态模型 (文本+图像/视频): dl/llm/cores/multimodal.md
           # - 大模型预训练与Scaling Laws: basics/scaling.md
         - 优化和落地:
-          - Fine-tuning 与 LoRA/PEFT: dl/llm/optim/finetune.md
+          # - Fine-tuning 与 LoRA/PEFT: dl/llm/optim/finetune.md
           - 模型优化: dl/llm/optim/optim.md
           - 模型部署: dl/llm/optim/deploy.md
         - 应用开发:
