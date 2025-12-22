@@ -3,7 +3,6 @@ site_name: Zhenda AI Notes
 nav:
   - 首页: index.md
   - 概览: overview.md
-  - AI发展史: foundation/history.md
   - AI开发工具: tools.md
   - 数学基础:
     - 微积分: math/calculus.md
