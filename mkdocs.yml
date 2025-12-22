@@ -32,7 +32,7 @@ nav:
           - Token / Embedding: dl/llm/cores/token-embedding.md
           - Transformer架构详解: dl/llm/cores/transformer.md  # 自注意力、RoPE、RMSNorm
           - 注意力机制变体: dl/llm/cores/attention-variants.md  # 多头、稀疏、分组注意力
-          - 预训练与微调与SFT / RLHF: dl/llm/cores/training.md
+          - 预训练与微调与SFT / RLHF: dl/llm/cores/finetune.md
           - 多模态模型 (文本+图像/视频): dl/llm/cores/multimodal.md
           # - 大模型预训练与Scaling Laws: basics/scaling.md
         - 优化和落地:
