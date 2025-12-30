@@ -27,4 +27,4 @@ LoRA: 旨在在不修改预训练模型主体参数的情况下，利用低秩�
 
 
 
-Fine-tuning 与 LoRA/PEFT
+LoRA/PEFT
