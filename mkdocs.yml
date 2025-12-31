@@ -22,13 +22,15 @@ nav:
         - 训练循环详解: dl/pytorch/training-loop.md
         - 用 PyTorch 实现 Transformer: dl/pytorch/transformer.md
       # - 深度学习与神经网络: dl/neural.md
-      - CNN: dl/cnn.md
-      - RNN: dl/rnn.md
-      - GANs: dl/gans.md
+      - Architecture:
+        - CNN: dl/architecture/cnn.md
+        - RNN: dl/architecture/rnn.md
+        - GANs: dl/architecture/gans.md
+        - Transformer架构详解: dl/architecture/transformer.md  # 自注意力、RoPE、RMSNorm
       - 大模型:
         - 核心原理:
+          - 概览: dl/llm/cores/index.md
           - Token / Embedding: dl/llm/cores/token-embedding.md
-          - Transformer架构详解: dl/llm/cores/transformer.md  # 自注意力、RoPE、RMSNorm
           - 注意力机制变体: dl/llm/cores/attention-variants.md  # 多头、稀疏、分组注意力
           - 预训练与微调与SFT / RLHF: dl/llm/cores/finetune.md
           - 多模态模型 (文本+图像/视频): dl/llm/cores/multimodal.md
