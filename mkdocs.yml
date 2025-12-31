@@ -22,12 +22,12 @@ nav:
         - 训练循环详解: dl/pytorch/training-loop.md
         - 用 PyTorch 实现 Transformer: dl/pytorch/transformer.md
       # - 深度学习与神经网络: dl/neural.md
-      - Architecture:
+      - 网络架构:
         - CNN: dl/architecture/cnn.md
         - RNN: dl/architecture/rnn.md
         - GANs: dl/architecture/gans.md
-        - Transformer架构详解: dl/architecture/transformer.md  # 自注意力、RoPE、RMSNorm
-      - 大模型:
+        - Transformer: dl/architecture/transformer.md  # 自注意力、RoPE、RMSNorm
+      - 大语言模型:
         - 核心原理:
           - 概览: dl/llm/cores/index.md
           - Token / Embedding: dl/llm/cores/token-embedding.md
