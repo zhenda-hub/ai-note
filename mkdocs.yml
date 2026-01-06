@@ -43,6 +43,7 @@ nav:
           - Prompt工程: dl/llm/dev/prompt.md
           - RAG基础开发: dl/llm/dev/rag.md
           - Agent入门: dl/llm/dev/agent.md
+          - vibe-coding入门: dl/llm/dev/vibe-coding.md
   
         
 # theme: readthedocs
