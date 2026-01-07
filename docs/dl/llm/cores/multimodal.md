@@ -28,3 +28,12 @@
 
 融合策略可以根据任务需求决定：是“图像+文本”对齐做检索，还是“视频+音频+文本”做问答、多模态对话，都用同一个思路：先各自嵌入 → 再对齐 / 融合 → 最终下游 Head 推理或生成。
 
+
+
+text2image:
+
+text_encoders
+vae
+diffusion_models
+loras
+
