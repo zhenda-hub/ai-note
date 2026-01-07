@@ -1,24 +1,28 @@
 [toc]
 
-## 工具
+## 编程工具
 
-### cursor
+### ide
+
+#### cursor
 
 ```
 curl i
 ```
 
+$20
 
 
-### claude code
+#### cline
+
+开源免费
+
+### cli
+
+#### claude code
 
 
 <https://claude.com/product/claude-code>
-
-
-```bash
-curl -fsSL https://claude.ai/install.sh | bash
-```
 
 
 ```bash
@@ -27,12 +31,50 @@ claude --help
 claude
 ```
 
-### codex
+自定义接入的模型
+
+```bash
+# 编辑或新增 Claude Code 配置文件 `~/.claude/settings.json`
+{
+    "env": {
+        "ANTHROPIC_AUTH_TOKEN": "your_zhipu_api_key",
+        "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+        "API_TIMEOUT_MS": "3000000",
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": 1
+    }
+}
 
 
-### cline
+{
+    "env": {
+        "ANTHROPIC_AUTH_TOKEN": "<ARK_API_KEY>",
+        "ANTHROPIC_BASE_URL": "https://ark.cn-beijing.volces.com/api/coding",
+        "ANTHROPIC_MODEL": "<Model>"
+    }
+}
+
+```
 
 
+```bash
+export ANTHROPIC_BASE_URL=
+export ANTHROPIC_AUTH_TOKEN=
+export ANTHROPIC_MODEL=
+export API_TIMEOUT_MS=600000
+```
+
+
+#### codex
+
+
+#### opencode
+
+开源免费
+
+```bash
+opencode auth login
+opencode
+```
 
 ## 模型
 
@@ -60,3 +102,16 @@ claude
 
 
 
+### doubao-seed-code
+
+
+coding plan
+
+
+| 上下文（千tokens）  | 输入（百万token） | 输出（百万token） | 缓存     | 缓存命中（百万token） | decode速度 |
+| :------------------ | :---------------- | :---------------- | :------- | :-------------------- | :--------- |
+| 输入长度 [0, 32)    | 1.2元             | 8元               | 限时免费 | 0.4元                 | 30-50      |
+| 输入长度 [32, 128)  | 1.4元               | 12元              | 限时免费 | 0.6元                 | 30-50      |
+| 输入长度 [128, inf) | 2.8元               | 16元              | 限时免费 | 0.8元                 | 30-50      |
+
+<https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code>
