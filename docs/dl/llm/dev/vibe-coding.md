@@ -63,6 +63,25 @@ export ANTHROPIC_MODEL=
 export API_TIMEOUT_MS=600000
 ```
 
+##### 使用方法
+
+<https://code.claude.com/docs/zh-CN/>
+
+生成测试框架
+添加有意义的测试用例
+运行并验证测试
+
+
+Claude Code 并行开发的核心是一个终端一个分支。
+
+```bash
+/init
+```
+
+##### 体验
+
+交互很多
+会做todo
 
 #### codex
 
@@ -74,7 +93,30 @@ export API_TIMEOUT_MS=600000
 ```bash
 opencode auth login
 opencode
+
 ```
+
+
+<https://opencode.ai/docs/troubleshooting/#copypaste-not-working-on-linux>
+```bash
+# fix: linux copypaste
+sudo apt install -y wl-clipboard
+```
+
+##### 使用方法
+
+<https://opencode.ai/docs>
+
+/init
+生成 AGENTS.md
+
+Plan mode 
+
+##### 体验
+
+交互少
+
+会做todo，而且有自测
 
 ## 模型
 
