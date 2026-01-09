@@ -217,6 +217,7 @@ This agent evaluates code from a user experience perspective, focusing on how im
 ```
 
 
+web search
 
 mcp
 手机指挥干活
@@ -322,4 +323,6 @@ agent
 mcp
 vibe-coding
 
+office
+browser
 
