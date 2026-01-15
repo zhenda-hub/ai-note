@@ -44,7 +44,6 @@ claude
     }
 }
 
-
 {
     "env": {
         "ANTHROPIC_AUTH_TOKEN": "<ARK_API_KEY>",
@@ -202,7 +201,6 @@ This agent evaluates code from a user experience perspective, focusing on how im
 你可以根据实际需求组合使用这些 agents：
 
 ```bash
-# 典型工作流
 1. 写完代码 → Code Simplifier（先简化）
 2. 简化后 → Code Reviewer（检查质量）
 3. 质量OK → Security Reviewer（安全扫描）
@@ -337,12 +335,8 @@ coding plan
 
 
 
-TODO:
 
-
-agent
-mcp
-vibe-coding
+## mcp
 
 office
 browser

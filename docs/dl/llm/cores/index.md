@@ -55,11 +55,13 @@ DPO（直接偏好优化）：简化 RLHF 流程，直接通过偏好数据优�
 
 生成机制：自回归解码 —— 让模型 "开口说话"
 LLM 的文本生成遵循严格的自回归流程，逐 token 生成，确保连贯性。
+
 完整生成流程
 plaintext
 输入(Prompt) → Tokenization(分词) → Embedding(向量化) → Transformer解码层 → 
 语言模型头(LM Head) → Softmax(概率分布) → 采样(选下一个token) → 
 添加到输入序列 → 重复直到生成结束符(EOS)
+
 关键技术点
 Tokenization：将文本拆分为子词单元（如 GPT 的 Byte-Pair Encoding），平衡词汇量与语义完整性
 KV 缓存：缓存已生成 token 的键值对，避免重复计算，提升推理速度
