@@ -33,9 +33,9 @@ nav:
           - Token / Embedding: dl/llm/cores/token-embedding.md
           - 注意力机制变体: dl/llm/cores/attention-variants.md  # 多头、稀疏、分组注意力
           - 预训练与微调与SFT / RLHF: dl/llm/cores/finetune.md
-          - 多模态模型 (文本+图像/视频): dl/llm/cores/multimodal.md
           # - 大模型预训练与Scaling Laws: basics/scaling.md
-        - 优化和落地:
+        - 扩展和优化:
+          - 多模态模型 (文本+图像/视频): dl/llm/optim/multimodal.md
           # - Fine-tuning 与 LoRA/PEFT: dl/llm/optim/finetune.md
           - 模型优化: dl/llm/optim/optim.md
           - 模型部署: dl/llm/optim/deploy.md
