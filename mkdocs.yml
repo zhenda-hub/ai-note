@@ -44,6 +44,8 @@ nav:
           - RAG基础开发: dl/llm/dev/rag.md
           - Agent入门: dl/llm/dev/agent.md
           - vibe-coding入门: dl/llm/dev/vibe-coding.md
+          - 思维导图: dl/llm/dev/mindmap.md
+          - ppt: dl/llm/dev/ppt.md
   
         
 # theme: readthedocs
