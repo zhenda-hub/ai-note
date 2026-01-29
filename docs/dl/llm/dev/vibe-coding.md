@@ -92,7 +92,25 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 运行并验证测试
 
 
-Claude Code 并行开发的核心是一个终端一个分支。
+##### 并行开发
+
+只有一个本地仓库， 让claude code多终端并行开发， 一个终端一个文件夹
+
+worktree
+```bash
+# 列出所有 worktree
+git worktree list
+
+git worktree add ../make-qr2-c1 c1
+
+# 删除 worktree（用完后）
+git worktree remove ../make-qr2-c1
+
+# 清理过期的 worktree
+git worktree prune
+
+```
+
 
 ```bash
 /init
