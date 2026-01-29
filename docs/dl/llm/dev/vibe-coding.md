@@ -28,12 +28,16 @@ cline auth
 cline
 ```
 
+频繁提问
+
 #### kilo code
 
 ```bash
 npm install -g @kilocode/cli
 kilocode
 ```
+
+闷头干，停不下来
 
 #### claude code
 
