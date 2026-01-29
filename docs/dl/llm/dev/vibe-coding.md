@@ -19,6 +19,22 @@ $20
 
 ### cli
 
+#### cline
+
+```bash
+
+npm install -g cline
+cline auth
+cline
+```
+
+#### kilo code
+
+```bash
+npm install -g @kilocode/cli
+kilocode
+```
+
 #### claude code
 
 
@@ -84,7 +100,128 @@ Claude Code 并行开发的核心是一个终端一个分支。
 shift tab 切换模式
 
 
+##### notification
 
+mac:
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": []
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": []
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": []
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title '✅ Claude Code' -message '任务已完成' && afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title '🔔 Claude Code' -message 'Claude 需要您的输入' && afplay /System/Library/Sounds/Glass.aiff"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+```json
+"hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"🔔 Claude Code\" -message \"Claude needs your input\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"✅ Claude Code\" -message \"The task has been completed\""
+          }
+        ]
+      }
+    ]
+  }
+
+```
+
+linux:
+
+```json
+{
+    "hooks": {
+      "Stop": [
+        {
+          "hooks": [
+            {
+              "type": "command",
+              "command": "afplay /System/Library/Sounds/Glass.aiff",
+              "command": "notify-send 'Claude done ❇️'"
+            }
+          ]
+        }
+      ]
+    }
+  }
+```
+
+windows:
+
+```json
+"hooks": {
+    "Notification": [{
+        "hooks": [{
+           "type": "command",            
+           "command": "powershell.exe -c \"(New-Object Media.SoundPlayer 'C:\\Users\\YOURNAME\\notification.wav').PlaySync()\""
+        }]
+    }],    
+"Stop": [{        
+    "hooks": [{            
+        "type": "command",
+        "command": "powershell.exe -c \"(New-Object Media.SoundPlayer 'C:\\Users\\YOURNAME\\Sounds\\done.wav').PlaySync()\""
+        }]
+    }]
+}
+```
+将指令添加到全局或项目特定的CLAUDE.md文件中：
+
+```md
+## Notification
+
+- IMPORTANT: YOU MUST ALWAYS DO THIS: When you need to send me a notification because you need input or when you have finished a task, please use terminal-notifier tool like this: terminal-notifier -title "🔔 Claude Code: request" -message "Claude needs your permission to use ...", or terminal-notifier -title "✅ Claude Code: done" -message "The task has been completed"
+- Always customise the message using a short summary of the input needed or the task just completed
+
+```
 
 ##### subagents
 
@@ -201,13 +338,13 @@ This agent evaluates code from a user experience perspective, focusing on how im
 
 你可以根据实际需求组合使用这些 agents：
 
-```bash
+
 1. 写完代码 → Code Simplifier（先简化）
 2. 简化后 → Code Reviewer（检查质量）
 3. 质量OK → Security Reviewer（安全扫描）
 4. 涉及架构 → Tech Lead（战略审查）
 5. 用户界面 → UX Reviewer（体验检查）
-```
+
 
 这些描述足够详细，可以让 AI 理解每个 agent 的具体职责和使用时机。你可以根据团队实际情况调整或补充细节。
 
@@ -216,7 +353,8 @@ This agent evaluates code from a user experience perspective, focusing on how im
 ```
 
 
-web search
+- plan
+- web search
 
 mcp
 手机指挥干活
@@ -341,4 +479,3 @@ coding plan
 
 office
 browser
-
