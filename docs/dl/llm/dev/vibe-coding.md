@@ -87,9 +87,16 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 <https://code.claude.com/docs/zh-CN/>
 
-生成测试框架
-添加有意义的测试用例
-运行并验证测试
+prompt：
+
+```txt
+方案规划，目录规划。
+梳理出核心子任务，针对核心子任务生成测试框架
+
+
+使用worktree,切换新分支 ，开发功能：。添加有意义的测试用例。最后运行并验证测试用例通过。 
+提交代码，合并代码到main分支，清理这个worktree和分支
+```
 
 
 ##### 并行开发
