@@ -96,6 +96,8 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 只有一个本地仓库， 让claude code多终端并行开发， 一个终端一个文件夹
 
+缺点：开发完了，还需要重新安装依赖才能运行。。。
+
 worktree
 ```bash
 # 列出所有 worktree
@@ -122,128 +124,17 @@ git worktree prune
 shift tab 切换模式
 
 
+##### skills
+<https://github.com/anthropics/skills>
+
+```bash
+/plugin marketplace add anthropics/skills
+
+/plugin install document-skills@anthropic-agent-skills
+/plugin install example-skills@anthropic-agent-skills
+```
+
 ##### notification
-
-mac:
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "*",
-        "hooks": []
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": []
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": []
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title '✅ Claude Code' -message '任务已完成' && afplay /System/Library/Sounds/Glass.aiff"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title '🔔 Claude Code' -message 'Claude 需要您的输入' && afplay /System/Library/Sounds/Glass.aiff"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-```json
-"hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title \"🔔 Claude Code\" -message \"Claude needs your input\""
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title \"✅ Claude Code\" -message \"The task has been completed\""
-          }
-        ]
-      }
-    ]
-  }
-
-```
-
-linux:
-
-```json
-{
-    "hooks": {
-      "Stop": [
-        {
-          "hooks": [
-            {
-              "type": "command",
-              "command": "afplay /System/Library/Sounds/Glass.aiff",
-              "command": "notify-send 'Claude done ❇️'"
-            }
-          ]
-        }
-      ]
-    }
-  }
-```
-
-windows:
-
-```json
-"hooks": {
-    "Notification": [{
-        "hooks": [{
-           "type": "command",            
-           "command": "powershell.exe -c \"(New-Object Media.SoundPlayer 'C:\\Users\\YOURNAME\\notification.wav').PlaySync()\""
-        }]
-    }],    
-"Stop": [{        
-    "hooks": [{            
-        "type": "command",
-        "command": "powershell.exe -c \"(New-Object Media.SoundPlayer 'C:\\Users\\YOURNAME\\Sounds\\done.wav').PlaySync()\""
-        }]
-    }]
-}
-```
-将指令添加到全局或项目特定的CLAUDE.md文件中：
-
-```md
-## Notification
-
-- IMPORTANT: YOU MUST ALWAYS DO THIS: When you need to send me a notification because you need input or when you have finished a task, please use terminal-notifier tool like this: terminal-notifier -title "🔔 Claude Code: request" -message "Claude needs your permission to use ...", or terminal-notifier -title "✅ Claude Code: done" -message "The task has been completed"
-- Always customise the message using a short summary of the input needed or the task just completed
-
-```
 
 ##### subagents
 
