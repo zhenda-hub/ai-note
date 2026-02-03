@@ -5,23 +5,12 @@
 
 ### 原因
 
-1. 上下文窗口 ≠ 长期记忆
-没有记住早期决策
-
-1. 隐性前提没有给AI说清楚：
-- 未来要扩展
-- 技术栈偏好
-
-1. 误差累积效应 (Compound Error)：
+- 上下文窗口 ≠ 长期记忆 没有记住早期决策
+- 隐性前提没有给AI说清楚：未来要扩展, 技术栈偏好等问题
+- 误差累积效应 (Compound Error)：
 如果每步准确率是 0.95，那么经过 10 个连续环节后，整体成功率将降至 0.5987。
 一旦中间某一步生成的代码或逻辑有误，后续所有工作都会基于这个“错误的基石”构建，导致最终崩盘。
-
-1. 缺乏全局架构思维：
-AI 本质上是**概率预测引擎**，它擅长“续写”局部代码，但不擅长“规划”软件架构。
-
-它不知道如何平衡可扩展性、低耦合，可维护，可测试
-
-往往会给出“能跑通但很混乱”的方案。
+- 缺乏全局架构思维：AI 本质上是**概率预测引擎**，它擅长“续写”局部代码，但不擅长“规划”软件架构。它不知道如何平衡可扩展性、低耦合，可维护，可测试。往往会给出“能跑通但很混乱”的方案。
 
 ### 解决方案
 
@@ -37,43 +26,48 @@ Q: 单步准确率是90%, 完成一步测试一步，有异常仅限修改一次
 | **90%** | **✅**    | **99%** | **≈ 90.4%** |
 
 
+#### System Prompt（系统提示）也就是memory（记忆）功能
 
-#### 软件开发流程
+长期的默认的提示内容
+
+例如claude code 里的 CLAUDE.md： 它的核心作用是在每次对话开始时自动被 Claude Code 读取，用来给 Claude 提供关于你项目的上下文和偏好设置。
+
+可以生成系统提示：
+
+```txt
+# 添加代码设计原则；软件开发流程采用TDD；编码前，先使用worktree切换新分支
+```
+
+
+##### 代码设计原则
+
+```txt
+KISS 原则（Keep It Simple, Stupid）
+单一职责原则（Single Responsibility Principle，SRP）
+Explicit is Better Than Implicit (显式优于隐式)
+```
+
+##### 软件开发流程
 
 测试驱动开发(TDD)： 先让 AI 写测试用例，确保测试用例覆盖了所有需求点。再写功能代码，通过测试用例。
 文档驱动开发 (Documentation-Driven Development)
 
+workflow: branch-> plan -> test ->src ->review ->merge ->cleanup
 
-workflow: plan ->test ->review ->src ->review ->DECISIONS.md
-
-
-#### reviewer agent 代码设计原则
 
 ```txt
-KISS 原则（Keep It Simple, Stupid）—— 核心含义：代码 / 架构 / 设计要尽可能简单，避免不必要的复杂，能用简单方案解决的问题，绝不使用复杂方案。
-单一职责原则（Single Responsibility Principle，SRP）核心含义：一个代码单元（函数 / 类 / 模块 / 文件），只负责一件事，只有一个引起它变化的原因。
-Explicit is Better Than Implicit (显式优于隐式)
+现在需要开发功能：xxx。使用worktree,切换新分支.梳理计划。
+根据plan，编写测试用例，确保测试用例覆盖所有需求点。
+根据plan，编写代码实现功能，通过测试用例。 
+
+提交代码，合并代码到main分支，清理这个worktree和分支
 ```
 
+#### openspec
 
-
-Q: 我希望过一年后，自己回看项目，也可以快速熟悉项目，而不需要重新读项目的所有代码。应该怎么做？
-
-DECISIONS.md
-
-```md
-## 2024-03-15（xx模块）：选择JWT而非Session
-**what issue**：如何实现无状态认证？
-**why**：需要水平扩展，移动端支持好
-```
-
-
+todo...
 
 最后还是需要人类监督和验证。AI 本质上是**概率预测引擎**，没有百分百的确定性
-
-
-
-
 
 
 ## 编程工具
@@ -163,18 +157,10 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 <https://code.claude.com/docs/zh-CN/>
 
-prompt：
-
-```txt
-方案规划，目录规划。
-梳理出核心子任务，针对核心子任务生成测试框架
-
-
-使用worktree,切换新分支 ，开发功能：。添加有意义的测试用例。最后运行并验证测试用例通过。 
-提交代码，合并代码到main分支，清理这个worktree和分支
 ```
-
-
+!后面接命令
+#后面写入CLAUDE.md 
+```
 ##### 并行开发
 
 只有一个本地仓库， 让claude code多终端并行开发， 一个终端一个文件夹
@@ -199,7 +185,6 @@ git worktree prune
 
 ```bash
 /init
-
 /resume
 
 ```
