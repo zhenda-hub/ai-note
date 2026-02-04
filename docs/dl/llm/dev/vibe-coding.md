@@ -55,7 +55,7 @@ Explicit is Better Than Implicit (显式优于隐式)
 测试驱动开发(TDD)： 先让 AI 写测试用例，确保测试用例覆盖了所有需求点。再写功能代码，通过测试用例。
 文档驱动开发 (Documentation-Driven Development)
 
-workflow: branch-> plan -> test ->src ->review ->merge ->cleanup
+workflow: plan -> branch-> test ->src ->review ->merge ->cleanup
 
 
 ```txt
