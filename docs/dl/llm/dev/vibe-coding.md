@@ -186,7 +186,7 @@ git worktree prune
 ```bash
 /init
 /resume
-
+/clear
 ```
 
 shift tab 切换模式
