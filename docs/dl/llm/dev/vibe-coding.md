@@ -77,10 +77,12 @@ workflow: plan -> branch ->src -> test(op) ->merge ->cleanup
 ```bash
 openspec init
 
+/opsx:explore
 /opsx:new       Start a new change
 /opsx:continue  Create the next artifact
 /opsx:apply     Implement tasks
-/opsx:archive   归档此变更（如果暂不实施）
+/opsx:verify    Verify the change
+/opsx:archive   Archive this change
 ```
 
 最后还是需要人类监督和验证。AI 本质上是**概率预测引擎**，没有百分百的确定性
