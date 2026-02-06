@@ -41,6 +41,21 @@ Q: 单步准确率是90%, 完成一步测试一步，有异常仅限修改一次
 # 严禁自动merge代码，一定要向用户确认。
 ```
 
+prompt:
+
+```txt
+创建用户级别的CLAUDE.md
+更新 用户级别的CLAUDE.md 文档，避免下次犯同样的错误
+
+
+现在需要开发功能：xxx。使用worktree,切换新分支.梳理计划。
+根据plan，编写测试用例，确保测试用例覆盖所有需求点。
+根据plan，编写代码实现功能，通过测试用例。 
+
+提交代码，合并代码到main分支，清理这个worktree和分支
+
+```
+
 
 ##### 代码设计原则
 
@@ -55,20 +70,18 @@ Explicit is Better Than Implicit (显式优于隐式)
 测试驱动开发(TDD)： 先让 AI 写测试用例，确保测试用例覆盖了所有需求点。再写功能代码，通过测试用例。
 文档驱动开发 (Documentation-Driven Development)
 
-workflow: plan -> branch-> test ->src ->review ->merge ->cleanup
-
-
-```txt
-现在需要开发功能：xxx。使用worktree,切换新分支.梳理计划。
-根据plan，编写测试用例，确保测试用例覆盖所有需求点。
-根据plan，编写代码实现功能，通过测试用例。 
-
-提交代码，合并代码到main分支，清理这个worktree和分支
-```
+workflow: plan -> branch ->src -> test(op) ->merge ->cleanup
 
 #### openspec
 
-todo...
+```bash
+openspec init
+
+/opsx:new       Start a new change
+/opsx:continue  Create the next artifact
+/opsx:apply     Implement tasks
+/opsx:archive   归档此变更（如果暂不实施）
+```
 
 最后还是需要人类监督和验证。AI 本质上是**概率预测引擎**，没有百分百的确定性
 
