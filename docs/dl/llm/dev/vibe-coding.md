@@ -1,4 +1,5 @@
 [toc]
+
 ## 原理
 
 让AI做复杂项目失败率高，做简单功能失败率低。为什么？如何提交AI做复杂项目的成功率？
@@ -8,8 +9,8 @@
 - 上下文窗口 ≠ 长期记忆 没有记住早期决策
 - 隐性前提没有给AI说清楚：未来要扩展, 技术栈偏好等问题
 - 误差累积效应 (Compound Error)：
-如果每步准确率是 0.95，那么经过 10 个连续环节后，整体成功率将降至 0.5987。
-一旦中间某一步生成的代码或逻辑有误，后续所有工作都会基于这个“错误的基石”构建，导致最终崩盘。
+  如果每步准确率是 0.95，那么经过 10 个连续环节后，整体成功率将降至 0.5987。
+  一旦中间某一步生成的代码或逻辑有误，后续所有工作都会基于这个“错误的基石”构建，导致最终崩盘。
 - 缺乏全局架构思维：AI 本质上是**概率预测引擎**，它擅长“续写”局部代码，但不擅长“规划”软件架构。它不知道如何平衡可扩展性、低耦合，可维护，可测试。往往会给出“能跑通但很混乱”的方案。
 
 ### 解决方案
@@ -18,13 +19,12 @@
 
 Q: 单步准确率是90%, 完成一步测试一步，有异常仅限修改一次， 修改的准确率也是90%。 一共有10步，求总体准确率?
 
-| 单步原始准确率 | 是否允许一次修改 | 单步最终成功率 | 10 步总体成功率   |
-| ------- | -------- | ------- | ----------- |
-| 95%     | ❌        | 95%     | ≈ 60.0%     |
-| 95%     | ✅        | 99.75%  | ≈ 97.5%     |
-| **90%** | ❌        | **90%** | **≈ 34.9%** |
-| **90%** | **✅**    | **99%** | **≈ 90.4%** |
-
+| 单步原始准确率 | 是否允许一次修改 | 单步最终成功率 | 10 步总体成功率 |
+| -------------- | ---------------- | -------------- | --------------- |
+| 95%            | ❌               | 95%            | ≈ 60.0%         |
+| 95%            | ✅               | 99.75%         | ≈ 97.5%         |
+| **90%**        | ❌               | **90%**        | **≈ 34.9%**     |
+| **90%**        | **✅**           | **99%**        | **≈ 90.4%**     |
 
 #### System Prompt（系统提示）也就是memory（记忆）功能
 
@@ -50,12 +50,11 @@ prompt:
 
 现在需要开发功能：xxx。使用worktree,切换新分支.梳理计划。
 根据plan，编写测试用例，确保测试用例覆盖所有需求点。
-根据plan，编写代码实现功能，通过测试用例。 
+根据plan，编写代码实现功能，通过测试用例。
 
 提交代码，合并代码到main分支，清理这个分支和worktree
 
 ```
-
 
 ##### 代码设计原则
 
@@ -80,13 +79,13 @@ openspec init
 /opsx:explore
 /opsx:new       Start a new change
 /opsx:continue  Create the next artifact
+/opsx:ff        ff
 /opsx:apply     Implement tasks
 /opsx:verify    Verify the change
 /opsx:archive   Archive this change
 ```
 
 最后还是需要人类监督和验证。AI 本质上是**概率预测引擎**，没有百分百的确定性
-
 
 ## 编程工具
 
@@ -99,7 +98,6 @@ curl i
 ```
 
 $20
-
 
 #### cline
 
@@ -129,9 +127,7 @@ kilocode
 
 #### claude code
 
-
 <https://claude.com/product/claude-code>
-
 
 ```bash
 claude --help
@@ -162,7 +158,6 @@ claude
 
 ```
 
-
 ```bash
 export ANTHROPIC_BASE_URL=
 export ANTHROPIC_AUTH_TOKEN=
@@ -177,8 +172,9 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 ```
 !后面接命令
-#后面写入CLAUDE.md 
+#后面写入CLAUDE.md
 ```
+
 ##### 并行开发
 
 只有一个本地仓库， 让claude code多终端并行开发， 一个终端一个文件夹
@@ -186,6 +182,7 @@ export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 缺点：开发完了，还需要重新安装依赖才能运行。。。
 
 worktree
+
 ```bash
 # 列出所有 worktree
 git worktree list
@@ -200,7 +197,6 @@ git worktree prune
 
 ```
 
-
 ```bash
 /init
 /resume
@@ -209,8 +205,8 @@ git worktree prune
 
 shift tab 切换模式
 
-
 ##### skills
+
 <https://github.com/anthropics/skills>
 
 ```bash
@@ -222,23 +218,15 @@ shift tab 切换模式
 
 ##### notification
 
-
-
-| 方式                       | 依赖终端          | 技术机制                  | 能做什么              | 跨终端性        | 适合谁                  |
-| ------------------------ | ------------- | --------------------- | ----------------- | ----------- | -------------------- |
-| **iTerm2 (OSC 9)**       | iTerm2（macOS） | OSC 9 escape sequence | 系统级通知（macOS 通知中心） | ❌ 仅 iTerm2  | macOS + iTerm2 重度用户  |
-| **Terminal Bell (`\a`)** | 几乎所有终端        | ASCII Bell 字符         | 发出“叮”一声 / 闪屏      | ✅ 极强        | 通用、最保底               |
-| **iTerm2 w/ Bell**       | iTerm2        | Bell + iTerm2 增强      | 声音 + 通知/高亮        | ❌ 仅 iTerm2  | 想要「声音+可见提醒」          |
-| **Kitty (OSC 99)**       | Kitty         | OSC 99 扩展             | 桌面通知              | ❌ 仅 Kitty   | Linux / 跨平台 Kitty 用户 |
-| **Ghostty (OSC 777)**    | Ghostty       | OSC 777 扩展            | 原生系统通知            | ❌ 仅 Ghostty | 新潮终端玩家 😄            |
-
-
-
+| 方式                     | 依赖终端        | 技术机制              | 能做什么                     | 跨终端性      | 适合谁                    |
+| ------------------------ | --------------- | --------------------- | ---------------------------- | ------------- | ------------------------- |
+| **iTerm2 (OSC 9)**       | iTerm2（macOS） | OSC 9 escape sequence | 系统级通知（macOS 通知中心） | ❌ 仅 iTerm2  | macOS + iTerm2 重度用户   |
+| **Terminal Bell (`\a`)** | 几乎所有终端    | ASCII Bell 字符       | 发出“叮”一声 / 闪屏          | ✅ 极强       | 通用、最保底              |
+| **iTerm2 w/ Bell**       | iTerm2          | Bell + iTerm2 增强    | 声音 + 通知/高亮             | ❌ 仅 iTerm2  | 想要「声音+可见提醒」     |
+| **Kitty (OSC 99)**       | Kitty           | OSC 99 扩展           | 桌面通知                     | ❌ 仅 Kitty   | Linux / 跨平台 Kitty 用户 |
+| **Ghostty (OSC 777)**    | Ghostty         | OSC 777 扩展          | 原生系统通知                 | ❌ 仅 Ghostty | 新潮终端玩家 😄           |
 
 iTerm2、Kitty 和 Ghostty 都是 macOS（以及部分 Linux）上非常流行的终端模拟器（terminal emulator）
-
-
-
 
 ##### subagents
 
@@ -369,13 +357,11 @@ This agent evaluates code from a user experience perspective, focusing on how im
 
 ```
 
-
 - plan
 - web search
 
 mcp
 手机指挥干活
-
 
 ##### 体验
 
@@ -383,11 +369,9 @@ mcp
 会做todo
 对话管理
 
-
 慢，但是出来基本一遍或两边过
 
 #### codex
-
 
 #### opencode
 
@@ -399,8 +383,8 @@ opencode
 
 ```
 
-
 <https://opencode.ai/docs/troubleshooting/#copypaste-not-working-on-linux>
+
 ```bash
 # fix: linux copypaste
 sudo apt install -y wl-clipboard
@@ -413,8 +397,7 @@ sudo apt install -y wl-clipboard
 /init
 生成 AGENTS.md
 
-Plan mode 
-
+Plan mode
 
 设置prompt
 
@@ -436,6 +419,7 @@ If unsure:
 - Ask for clarification instead of guessing
 
 ```
+
 ##### 体验
 
 交互少
@@ -448,7 +432,6 @@ If unsure:
 可以查看token使用量
 
 ## 模型
-
 
 ### deepseek
 
@@ -468,29 +451,19 @@ If unsure:
 | 输入长度 [0, 32) 输出长度 [0.2+)   | 3元               | 14元              | 限时免费 | 0.6元                 | 30-50      |
 | 输入长度 [32, 200)                 | 4元               | 16元              | 限时免费 | 0.8元                 | 30-50      |
 
-
 <https://bigmodel.cn/pricing>
-
-
 
 ### doubao-seed-code
 
-
 coding plan
-
 
 | 上下文（千tokens）  | 输入（百万token） | 输出（百万token） | 缓存     | 缓存命中（百万token） | decode速度 |
 | :------------------ | :---------------- | :---------------- | :------- | :-------------------- | :--------- |
 | 输入长度 [0, 32)    | 1.2元             | 8元               | 限时免费 | 0.4元                 | 30-50      |
-| 输入长度 [32, 128)  | 1.4元               | 12元              | 限时免费 | 0.6元                 | 30-50      |
-| 输入长度 [128, inf) | 2.8元               | 16元              | 限时免费 | 0.8元                 | 30-50      |
+| 输入长度 [32, 128)  | 1.4元             | 12元              | 限时免费 | 0.6元                 | 30-50      |
+| 输入长度 [128, inf) | 2.8元             | 16元              | 限时免费 | 0.8元                 | 30-50      |
 
 <https://console.volcengine.com/ark/region:ark+cn-beijing/model/detail?Id=doubao-seed-code>
-
-
-
-
-
 
 ## mcp
 
