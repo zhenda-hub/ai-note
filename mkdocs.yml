@@ -4,6 +4,10 @@ nav:
     - 首页: index.md
     - 概览: overview.md
     - AI开发工具: tools.md
+    - 应用开发:
+          - Prompt工程: dev/prompt.md
+          - vibe-coding入门: dev/vibe-coding.md
+          - openclaw入门: dev/openclaw-doc.md
     - 数学基础:
           - 微积分: math/calculus.md
           - 线性代数: math/linear-algebra.md
@@ -40,10 +44,8 @@ nav:
                       - 模型优化: dl/llm/optim/optim.md
                       - 模型部署: dl/llm/optim/deploy.md
                 - 应用开发:
-                      - Prompt工程: dl/llm/dev/prompt.md
                       - RAG基础开发: dl/llm/dev/rag.md
                       - Agent入门: dl/llm/dev/agent.md
-                      - vibe-coding入门: dl/llm/dev/vibe-coding.md
                       - 思维导图: dl/llm/dev/mindmap.md
                       - docs: dl/llm/dev/docs.md
 
@@ -143,7 +145,7 @@ theme:
 
 plugins:
     - search
-    - optimize
+    # - optimize
     - statistics
     - git-revision-date-localized
     # - i18n:
