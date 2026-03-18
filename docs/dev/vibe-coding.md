@@ -210,7 +210,10 @@ shift tab 切换模式
 <https://github.com/anthropics/skills>
 
 ```bash
+/plugin marketplace add anthropics/claude-plugins-official
+/plugin marketplace add anthropics/claude-code
 /plugin marketplace add anthropics/skills
+
 
 /plugin install document-skills@anthropic-agent-skills
 /plugin install example-skills@anthropic-agent-skills
@@ -362,6 +365,12 @@ This agent evaluates code from a user experience perspective, focusing on how im
 
 mcp
 手机指挥干活
+
+更新cc:
+
+```bash
+claude update
+```
 
 ##### 体验
 
