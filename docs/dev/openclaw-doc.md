@@ -23,6 +23,10 @@ openclaw gateway restart
 
 自己可以搜索
 
+## skills
+
+https://help.apiyi.com/openclaw-skill-recommendations-2026.html
+
 ## 用手机连接
 
 飞书
