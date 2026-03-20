@@ -360,13 +360,14 @@ This agent evaluates code from a user experience perspective, focusing on how im
 
 ```
 
-- plan
-- web search
+### web search
 
-mcp
-手机指挥干活
+配置mcp: brave,tavily,linkup
+配置文件: ~/.claude/settings.json
 
-更新cc:
+todo: 手机指挥干活
+
+##### 更新cc:
 
 ```bash
 claude update
