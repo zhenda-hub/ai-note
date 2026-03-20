@@ -23,6 +23,8 @@ openclaw gateway restart
 
 自己可以搜索
 
+<https://api-dashboard.search.brave.com/app/keys>
+
 ## 用手机连接
 
 飞书
@@ -40,3 +42,5 @@ openclaw config set channels.feishu.streaming true
 ### 定时任务
 
 ## 没有记忆功能
+
+## 自定义skill
