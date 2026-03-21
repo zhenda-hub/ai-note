@@ -25,6 +25,10 @@ openclaw gateway restart
 
 <https://api-dashboard.search.brave.com/app/keys>
 
+## skills
+
+https://help.apiyi.com/openclaw-skill-recommendations-2026.html
+
 ## 用手机连接
 
 飞书
