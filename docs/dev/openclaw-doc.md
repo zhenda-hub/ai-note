@@ -27,11 +27,12 @@ openclaw gateway restart
 
 ## skills
 
-https://help.apiyi.com/openclaw-skill-recommendations-2026.html
+- https://help.apiyi.com/openclaw-skill-recommendations-2026.html
+- https://clawhub.ai/
 
 ## 用手机连接
 
-飞书
+1. 飞书
 
 <https://bytedance.larkoffice.com/docx/MFK7dDFLFoVlOGxWCv5cTXKmnMh>
 
@@ -40,6 +41,10 @@ npx -y @larksuite/openclaw-lark install
 
 openclaw config set channels.feishu.streaming true
 ```
+
+2. qq
+
+https://cloud.tencent.com/developer/article/2626045
 
 ### 发图片
 
@@ -50,6 +55,8 @@ openclaw config set channels.feishu.streaming true
 ## 自定义skill
 
 ## linux部署的OpenClaw 迁移步骤
+
+### export
 
 1. 导出配置和数据
 
@@ -87,3 +94,5 @@ openclaw gateway restart
 - Workspace 包含所有记忆文件（SOUL.md、USER.md、MEMORY.md 等），这是你的"灵魂"
 - 配置文件包含 API 密钥和集成设置
 - 建议定期备份 workspace，特别是在重要对话后
+
+### import

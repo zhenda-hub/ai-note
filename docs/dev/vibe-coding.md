@@ -443,6 +443,10 @@ If unsure:
 
 ## 模型
 
+### minimax
+
+<https://platform.minimaxi.com/subscribe/token-plan>
+
 ### deepseek
 
 | type                         | price |
