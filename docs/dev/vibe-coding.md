@@ -207,6 +207,8 @@ shift tab 切换模式
 
 ##### skills
 
+<https://claude.com/plugins>
+
 <https://github.com/anthropics/skills>
 
 ```bash
