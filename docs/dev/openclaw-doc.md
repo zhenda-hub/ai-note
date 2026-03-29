@@ -134,6 +134,14 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 - tencentcloud-lighthouse-skill管理腾讯云 Lighthouse
 - tencent-docs腾讯文档操作能力
 
+Capability Evolver 自动进化
+```bash
+# 在 OpenClaw 中安装 Capability Evolver
+claw install capability-evolver
+
+# 基础配置
+claw config capability-evolver --auto-optimize=true --interval=24h
+```
 #### 自定义skill
 
 当一个功能做了很久终于实现, 让它总结为一个skill.方便下次使用
