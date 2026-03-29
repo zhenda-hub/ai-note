@@ -148,6 +148,8 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 npx -y @larksuite/openclaw-lark install
 
 openclaw config set channels.feishu.streaming true
+openclaw config set channels.feishu.footer.elapsed true  # 开启耗时
+openclaw config set channels.feishu.footer.status true  # 开启状态展示
 ```
 
 2. qq
