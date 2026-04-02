@@ -122,6 +122,7 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 
 - https://help.apiyi.com/openclaw-skill-recommendations-2026.html
 - https://clawhub.ai/
+- https://skillhub.tencent.com/
 
 - tavily-search网络搜索
 - summarize对 URL 或文件进行汇总
