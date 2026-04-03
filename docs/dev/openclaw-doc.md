@@ -1,10 +1,3 @@
-## links
-
-- <https://openclaw.ai/>
-- <https://docs.openclaw.ai/start/getting-started>
-- <https://docs.openclaw.ai/tools/browser>
-- <https://docs.openclaw.ai/tools/skills>
-
 ## 开始使用
 
 ```bash
@@ -215,3 +208,13 @@ openclaw gateway restart
 - 建议定期备份 workspace，特别是在重要对话后
 
 ### import
+
+
+
+## links
+
+- <https://openclaw.ai/>
+- <https://docs.openclaw.ai/start/getting-started>
+- <https://docs.openclaw.ai/tools/browser>
+- <https://docs.openclaw.ai/tools/skills>
+- <https://github.com/ConardLi/easy-learn-ai>
