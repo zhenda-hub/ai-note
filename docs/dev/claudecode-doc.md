@@ -243,14 +243,14 @@ This agent evaluates code from a user experience perspective, focusing on how im
 <https://docs.firecrawl.dev/zh/developer-guides/mcp-setup-guides/claude-code>
 
 ```bash
-claude mcp add firecrawl -e FIRECRAWL_API_KEY=fc-4fca7660b3434136a2548dc94c2e176f -- npx -y firecrawl-mcp
+claude mcp add firecrawl -e FIRECRAWL_API_KEY=fc-4fca76xxxxxxxxxxxxxxx -- npx -y firecrawl-mcp
 claude mcp add firecrawl --url https://mcp.firecrawl.dev/your-api-key/v2/mcp
 ```
 
 <https://docs.tavily.com/documentation/mcp>
 
 ```bash
-claude mcp add --transport http tavily https://mcp.tavily.com/mcp/?tavilyApiKey=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
+claude mcp add --transport http tavily https://mcp.tavily.com/mcp/?tavilyApiKey=tvly-dev-xxxxxxxxxxxxxxxxxxz
 ```
 
 
