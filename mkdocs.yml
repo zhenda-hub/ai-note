@@ -8,6 +8,7 @@ nav:
           - Prompt工程: dev/prompt.md
           - vibe-coding入门: dev/vibe-coding.md
           - openclaw入门: dev/openclaw-doc.md
+          - claudecode入门: dev/claudecode-doc.md
     - 数学基础:
           - 微积分: math/calculus.md
           - 线性代数: math/linear-algebra.md
