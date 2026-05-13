@@ -103,3 +103,11 @@ for output in outputs:
 vLLM = PagedAttention + Continuous Batching + KV Cache 管理
                   ↓                  ↓              ↓
             分页显存管理        动态批处理      高效内存复用
+
+
+
+在大模型场景下，主要关注 VRAM（显存）和 RAM（内存）。
+
+VRAM 存储模型参数和计算数据，速度最快；RAM 可用于 CPU Offload临时存储参数。
+
+vLLM 通过 PagedAttention 高效管理 VRAM，结合 CPU Offload 技术可以在有限显存下运行更大模型。
