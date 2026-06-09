@@ -640,3 +640,21 @@ def track_execution(agent_result):
 用模型检测模型， 失败率降低到：
 0.1 * 0.1 *0.1 = 0.001
 
+### 多agent交互
+
+#### 多 Agent 解决的是什么？
+
+多 Agent 是任务编排和系统架构问题，核心价值在于：
+1. 突破上下文窗口限制
+一个 Agent 的 context 是有限的。任务太长时：
+
+2. 工具隔离
+更稳定安全
+
+3. 错误隔离与验证
+
+单 Agent：很容易幻觉。
+Multi-Agent：准确率会明显提升。
+
+Agent A 写代码 → Agent B 审查 → Agent C 测试
+单模型自己审查自己，容易自我欺骗（self-consistency bias）。多 Agent 可以真正做到对抗性验证。交叉验证

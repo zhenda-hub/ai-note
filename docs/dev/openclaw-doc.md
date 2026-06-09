@@ -14,7 +14,10 @@ openclaw doctor --fix
 # 安全检查
 openclaw security audit --deep
 openclaw security audit --fix
+
+openclaw plugins install @openclaw/voice-call
 ```
+
 
 配置文件: ~/.openclaw/openclaw.json
 
