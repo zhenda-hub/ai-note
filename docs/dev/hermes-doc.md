@@ -116,3 +116,20 @@ Migration Preview — 10 item(s) would be imported
 ## dashboard
 
 http://127.0.0.1:9119/achievements
+
+
+
+## 记忆
+
+多用skill
+少用memory, memory 有限 2000字
+多profile
+
+
+## 视觉
+
+```cmd
+hermes config set auxiliary.vision.model "glm-4v-flash"
+hermes config set auxiliary.vision.base_url "https://open.bigmodel.cn/api/coding/paas/v4"
+hermes config set auxiliary.vision.api_key "glmxxx"
+```
