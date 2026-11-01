@@ -15,6 +15,10 @@ agent-reach, pi-web-access， agent-browser
 
 @narumitw/pi-plan-mode, 
 
+卸载 @narumitw/pi-plan-mode → 安装 @bacnh85/pi-plan
+
+
+
 ## 记忆
 
 context-mode,
